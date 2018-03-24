@@ -85,7 +85,7 @@ private void oopsCheck() {
 			x += velX;
 			y += velY;
 			x = Game.clamp(x, 0 + 24, Game.WIDTH - 30);
-			y = Game.clamp(y, Game.HEIGHT - 60, Game.HEIGHT - 60);
+			y = Game.clamp(y, Game.HEIGHT - 72, Game.HEIGHT - 72);
 		if(velX < 1) {
 			moveLeft.runAnimation();
 			}else if(velX > 1){

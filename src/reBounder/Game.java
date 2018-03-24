@@ -66,7 +66,6 @@ public class Game extends Canvas implements Runnable{
 		level = new Level();
 		level.build(handler, 1);
 		levelCount = 1;
-//		Controller[] controllers = ControllerEnvironment.getDefaultEnvironment().getControllers();
 //		menu.tick();
 	}
 	
