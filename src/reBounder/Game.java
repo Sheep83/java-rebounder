@@ -69,9 +69,7 @@ public class Game extends Canvas implements Runnable{
 //		menu.tick();
 	}
 	
-	private void loadGfx() {
-		
-		
+	private void loadGfx() {	
 		BufferedImageLoader loader = new BufferedImageLoader();
 		try {
 			ballSpriteSheet = loader.loadImage("/ball_sprites.png");
