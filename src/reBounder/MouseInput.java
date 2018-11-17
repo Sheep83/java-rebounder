@@ -2,6 +2,9 @@ package reBounder;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import javax.swing.event.MouseInputAdapter;
+
 import java.awt.event.MouseAdapter;
 
 import reBounder.Game.STATE;
@@ -9,7 +12,7 @@ import reBounder.Game.STATE;
 //public class MouseInput implements MouseListener{
 
 
-public class MouseInput extends MouseAdapter{
+public class MouseInput extends MouseInputAdapter{
 	
 	private Handler handler;
 	
@@ -62,6 +65,14 @@ public class MouseInput extends MouseAdapter{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		int mouseX = e.getX();
+		int mouseY = e.getY();
+		Player player = (Player) handler.getPlayer();
+		player.setX(e.getX());
+    }
 	
 	
 

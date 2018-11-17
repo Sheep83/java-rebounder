@@ -53,7 +53,9 @@ public class Game extends Canvas implements Runnable{
 		new Window(WIDTH, HEIGHT, "reBounder", this);
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler));
-		this.addMouseListener(new MouseInput(handler));
+		MouseInput mouseInput = new MouseInput(handler);
+		this.addMouseListener(mouseInput);
+		this.addMouseMotionListener(mouseInput);
 		soundPlayer = new SoundPlayer();
 		menu = new Menu(this, handler, soundPlayer);
 		loadGfx();

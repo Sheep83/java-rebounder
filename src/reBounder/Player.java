@@ -144,5 +144,9 @@ private void oopsCheck() {
 	public void setLives(int lives) {
 		Playerlives = lives;
 	}
+	
+	public void setX(int newX) {
+		x = newX;
+	}
 		
 }
