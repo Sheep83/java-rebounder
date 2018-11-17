@@ -53,7 +53,7 @@ public class Brick extends GameObject{
 			brickHit.drawAnimation(g, x, y, 0);
 			Handler handler = Game.getHandler();
 			if(System.currentTimeMillis() - timeOfHit > 200 ) {
-				handler.removeObject(this);
+//				handler.removeObject(this);
 //				alive = true;
 //				ball = (Ball)handler.getBall();
 //				ball.reset();

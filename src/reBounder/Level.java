@@ -33,7 +33,7 @@ public class Level {
 		this.arr = new ArrayList<Integer>();
 		
 		if (level == 1) {
-			addBrick(16, 3);
+			addBrick(96, 3);
 		}else if (level == 2) {
 			addBrick(16, 2);
 			addBrick(16, 1);

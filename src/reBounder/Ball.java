@@ -21,7 +21,7 @@ public class Ball extends GameObject{
 		this.handler = handler;
 //		this.velX = (r.nextInt(4) + 1);
 		this.velX = 0;
-		this.velY = 3;
+		this.velY = 6;
 		this.textures = textures;
 //		SpriteSheet spriteSheet = new SpriteSheet(Game.getSpriteSheet());
 //		ballSprite = spriteSheet.grabImage(1, 1, 32, 32);
@@ -82,12 +82,14 @@ public class Ball extends GameObject{
 			velY += deltaVY;
 		}
 		
-		if(xBounce == true) {
-			velX *= -1;
-		}
 		if(yBounce == true) {
 			velY *= -1;
 		}
+		
+		if(xBounce == true) {
+			velX *= -1;
+		}
+		
 		
 	}
 	
@@ -95,7 +97,7 @@ public class Ball extends GameObject{
 		x = 640;
 		y = 256;
 		velX = 0;
-		velY = 3;
+		velY = 6;
 	}
 	
 	public BufferedImage getTexture(int index) {
@@ -139,58 +141,120 @@ public class Ball extends GameObject{
 					Rectangle bottomRight = new Rectangle((brickX + 70), (brickY2 - 2), 2, 2);
 					
 					if (getBounds().intersects(brickLeft.getBounds())){
-						System.out.print("Left");
-						
 						//collision left
+						System.out.print("Left");
+						handler.removeObject(brick);
+						brickLeft = null;
+						brickRight = null;
+						brickTop = null;
+						brickBottom = null;
+						topLeft = null;
+						topRight = null;
+						bottomLeft = null;
+						bottomRight = null;
 						rebound(0, 0, true, false);
-					
 					}else
 					if (getBounds().intersects(brickRight.getBounds())){
 						//collision right
 						System.out.print("Right");
+						handler.removeObject(brick);
+						brickLeft = null;
+						brickRight = null;
+						brickTop = null;
+						brickBottom = null;
+						topLeft = null;
+						topRight = null;
+						bottomLeft = null;
+						bottomRight = null;
 						rebound(0, 0, true, false);
-					
 					}else
 					if (getBounds().intersects(brickTop.getBounds())){
 						//collision top
 						System.out.print("Top");
+						handler.removeObject(brick);
+						brickLeft = null;
+						brickRight = null;
+						brickTop = null;
+						brickBottom = null;
+						topLeft = null;
+						topRight = null;
+						bottomLeft = null;
+						bottomRight = null;
 						rebound(0, 0, false, true);
-					
 					}else
 					if (getBounds().intersects(brickBottom.getBounds())){
 						//collision bottom
 						System.out.print("Bottom");
+						handler.removeObject(brick);
+						brickLeft = null;
+						brickRight = null;
+						brickTop = null;
+						brickBottom = null;
+						topLeft = null;
+						topRight = null;
+						bottomLeft = null;
+						bottomRight = null;
 						rebound(0, 0, false, true);
-					
 					}else
 						if (getBounds().intersects(topLeft.getBounds())){
-							System.out.print("Left");
-							
 							//collision left
-							rebound(0, 0, true, false);
-							rebound(0, 0, false, true);
-						
+							System.out.print("Left");
+							handler.removeObject(brick);
+							brickLeft = null;
+							brickRight = null;
+							brickTop = null;
+							brickBottom = null;
+							topLeft = null;
+							topRight = null;
+							bottomLeft = null;
+							bottomRight = null;
+							rebound(0, 0, true, true);
+//							rebound(0, 0, false, true);
 						}else
 						if (getBounds().intersects(topRight.getBounds())){
 							//collision right
 							System.out.print("Right");
-							rebound(0, 0, true, false);
-							rebound(0, 0, false, true);
-						
+							handler.removeObject(brick);
+							brickLeft = null;
+							brickRight = null;
+							brickTop = null;
+							brickBottom = null;
+							topLeft = null;
+							topRight = null;
+							bottomLeft = null;
+							bottomRight = null;
+							rebound(0, 0, true, true);
+//							rebound(0, 0, false, true);
 						}else
 						if (getBounds().intersects(bottomLeft.getBounds())){
 							//collision top
 							System.out.print("Top");
-							rebound(0, 0, true, false);
-							rebound(0, 0, false, true);
-						
+							handler.removeObject(brick);
+							brickLeft = null;
+							brickRight = null;
+							brickTop = null;
+							brickBottom = null;
+							topLeft = null;
+							topRight = null;
+							bottomLeft = null;
+							bottomRight = null;
+							rebound(0, 0, true, true);
+//							rebound(0, 0, false, true);
 						}else
 						if (getBounds().intersects(bottomRight.getBounds())){
 							//collision bottom
 							System.out.print("Bottom");
-							rebound(0, 0, true, false);
-							rebound(0, 0, false, true);
-						
+							handler.removeObject(brick);
+							brickLeft = null;
+							brickRight = null;
+							brickTop = null;
+							brickBottom = null;
+							topLeft = null;
+							topRight = null;
+							bottomLeft = null;
+							bottomRight = null;
+							rebound(0, 0, true, true);
+//							rebound(0, 0, false, true);
 						}
 					
 					
