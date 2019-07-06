@@ -26,7 +26,7 @@ public class Game extends Canvas implements Runnable{
 
 	private static final long serialVersionUID = 7436840021209078721L;
 //	public static final int WIDTH = 1280, HEIGHT = (WIDTH / 12) * 9;
-	public static final int WIDTH = 1280, HEIGHT = 1024;
+	public static final int WIDTH = 1280, HEIGHT = 720;
 	private Thread thread;
 //	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private static BufferedImage ballSpriteSheet, playerSpriteSheet, deathSpriteSheet, brickSpriteSheet = null;
@@ -112,7 +112,7 @@ public class Game extends Canvas implements Runnable{
 		this.addMouseListener(new MouseInput(handler));
 //		handler.reset();
 		handler.addObject(new Player(WIDTH/2 - 32, HEIGHT - 32, ID.Player, handler, textures));
-		handler.addObject(new Ball(WIDTH/2 - 128, HEIGHT/2 - 32, ID.Ball, handler, textures));
+		handler.addObject(new Ball(WIDTH/2 - 128, HEIGHT/2 - 256, ID.Ball, handler, textures));
 		hud = new HUD(handler);
 		level = new Level();
 		level.build(handler, levelCount);

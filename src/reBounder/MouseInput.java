@@ -47,7 +47,7 @@ public class MouseInput extends MouseInputAdapter{
 		int mouseY = e.getY();
 		if(Game.gameState == STATE.Menu) {
 		if (mouseX >= Game.WIDTH / 2 - 50 && mouseX <= Game.WIDTH/2 + 50) {
-			if(mouseY >= 800 && mouseY <= 850) {
+			if(mouseY >= Game.HEIGHT - 200 && mouseY <= Game.HEIGHT - 150) {
 				Game.setState(STATE.Game);
 			}
 		}

@@ -28,7 +28,7 @@ public class Level {
 	
 	public void build(Handler handler, int level) {
 		
-		int brickX = 64;
+		int brickX = 128;
 		int brickY = 48;
 		this.arr = new ArrayList<Integer>();
 		
@@ -56,28 +56,28 @@ public class Level {
 				handler.addObject(new Brick(brickX, brickY, ID.Brick, Bricktype.Normal));
 				brickX += 64;
 				if((i + 1) % 16 == 0) {
-				brickX = 64;
+				brickX = 128;
 				brickY += 32;
 				}
 			}else if(arr.get(i) == 2) {
 				handler.addObject(new Brick(brickX, brickY, ID.Brick, Bricktype.Tough));
 				brickX += 64;
 				if((i + 1) % 16 == 0) {
-				brickX = 64;
+				brickX = 128;
 				brickY += 32;
 				}
 			}else if(arr.get(i) == 3) {
 				handler.addObject(new Brick(brickX, brickY, ID.Brick, Bricktype.Metal));
 				brickX += 64;
 				if((i + 1) % 16 == 0) {
-				brickX = 64;
+				brickX = 128;
 				brickY += 32;
 				}
 			}else if(arr.get(i) == 0) {
 //				handler.addObject(new Brick(brickX, brickY, ID.Brick, Bricktype.Metal, handler));
 				brickX += 72;
 				if((i + 1) % 16 == 0) {
-				brickX = 64;
+				brickX = 128;
 				brickY += 48;
 				}
 			}

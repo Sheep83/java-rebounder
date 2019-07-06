@@ -32,6 +32,7 @@ public class Ball extends GameObject{
 
 	@Override
 	public void tick() {
+		collision();
 		x += velX;
 		y += velY;
 		if (x <= 0 || x >= Game.WIDTH - 16) {
@@ -43,7 +44,7 @@ public class Ball extends GameObject{
 		x = Game.clamp(x, 0, Game.WIDTH - 16);
 		y = Game.clamp(y, 0, Game.HEIGHT- 16);
 //		oopsCheck();
-		collision();
+//		collision();
 		if(velX < 1) {
 		animation_counter.runAnimation();
 		}else {
@@ -61,6 +62,7 @@ public class Ball extends GameObject{
 //		g.drawImage(ballSprite, x, y, null);
 //		g.setColor(Color.red);
 //		g.fillRect(x, y, 8, 8);
+//		g.drawRect(x + 12, y + 12, 8, 8);
 		
 	}
 

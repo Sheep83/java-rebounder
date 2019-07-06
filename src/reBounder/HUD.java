@@ -67,6 +67,9 @@ public class HUD {
 		g.drawString("Level: " + level, 10, 100);
 		g.drawString("Bricks: " + bricks, 10, 120);
 		g.drawString("Lives: " + lives, 10, 140);
+		g.drawString("Left: " + player.getLeft(),10, 160);
+		g.drawString("Right: " + player.getRight(),10, 180);
+		g.drawString("Stationary: " + player.getNotMoving(),10, 200);
 	}
 
 

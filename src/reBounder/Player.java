@@ -15,10 +15,11 @@ public class Player extends GameObject{
 	static int health;
 	static int Playerlives;
 	Textures textures;
+	private int lastX;
 	private BufferedImage leftSprite, rightSprite;
 	private Animation moveLeft, moveRight, playerDead;
 	private Ball ball;
-	private boolean alive;
+	private boolean alive, right, left, notMoving;
 	private long timeOfDeath;
 	private SoundPlayer soundPlayer;
 
@@ -35,6 +36,7 @@ public class Player extends GameObject{
 		score = 0;
 		Playerlives = 3;
 		alive = true;
+		lastX = x;
 	}
 	
 	public Rectangle getBounds() {
@@ -82,10 +84,25 @@ private void oopsCheck() {
 	public void tick() {
 		oopsCheck();
 		if(alive) {
+			setLastX(x);
 			x += velX;
 			y += velY;
 			x = Game.clamp(x, 0 + 24, Game.WIDTH - 30);
 			y = Game.clamp(y, Game.HEIGHT - 72, Game.HEIGHT - 72);
+			
+			if(lastX == x) {
+				notMoving = true;
+				left = false;
+				right = false;
+			}else if(lastX < x) {
+				right = true;
+				left = false;
+				notMoving = false;
+			}else if(lastX > x) {
+				left = true;
+				right = false;
+				notMoving = false;
+			}
 		if(velX < 1) {
 			moveLeft.runAnimation();
 			}else if(velX > 1){
@@ -148,5 +165,20 @@ private void oopsCheck() {
 	public void setX(int newX) {
 		x = newX;
 	}
-		
+	
+	public void setLastX(int x) {
+		lastX = x;
+	}
+	
+	public boolean getRight() {
+		return right;
+	}
+	
+	public boolean getLeft() {
+		return left;
+	}
+	
+	public boolean getNotMoving() {
+		return notMoving;
+	}
 }
